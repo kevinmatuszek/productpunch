@@ -1,0 +1,6 @@
+<h1><%= @punch.title %></h1>
+<p><%=  @punch.description %></p>
+
+<%= link_to "Back", root_path %>
+<%= link_to "Edit", edit_punch_path %>
+<%= link_to "Delete", punch_path, method: :delete, data: {confirm: "Are you sure"} %>
