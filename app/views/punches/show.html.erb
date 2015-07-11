@@ -20,8 +20,11 @@
 									<%= @punch.get_upvotes.size %>
 								</div>
 							<% end %>
-							<%= link_to "Edit", edit_punch_path, class: "btn btn-default" %>
-							<%= link_to "Delete", punch_path, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default" %>
+
+							<% if user_signed_in? %>
+								<%= link_to "Edit", edit_punch_path, class: "btn btn-default" %>
+								<%= link_to "Delete", punch_path, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default" %>
+							<% end %>
 						</div>
 					</div>
 				</div>

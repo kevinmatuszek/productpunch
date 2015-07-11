@@ -1,6 +1,6 @@
 class PunchesController < ApplicationController
 	before_action :find_punch, only: [:show, :edit, :update, :destroy, :upvote]
-
+	before_action :authenticate_user!, except: [:index, :show]
 	def index
 		@punches = Punch.all.order("created_at DESC")
 	end
