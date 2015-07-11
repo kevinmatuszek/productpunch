@@ -34,13 +34,13 @@ class PunchesController < ApplicationController
 	end
 
 	def destroy
-		@pin.destroy
+		@punch.destroy
 		redirect_to root_path
 	end
 
 	private
 		def punch_params
-			params.require(:punch).permit(:title, :description)
+			params.require(:punch).permit(:image, :title, :description)
 		end
 
 		def find_punch

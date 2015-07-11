@@ -1,5 +1,8 @@
-<h1>Edit Punch</h1>
+<div class="col-md-6 col-md-offset-3">
+	<h1>Edit Punch</h1>
+	<p><%= image_tag @punch.image.url(:medium) %></p>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to "Cancel", punch_path %>
+	<%= link_to "Cancel", punch_path %>
+</div>

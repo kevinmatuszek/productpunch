@@ -1,6 +1,7 @@
 <h1>This is the index placeholder</h1> 
 
 <% @punches.each do |punch| %>
+	<p><%= link_to (image_tag punch.image.url(:medium)), punch %></p>
 	<h1><%= link_to punch.title, punch %></h1>
 	<p> <%= punch.description %></p>
 <% end %>
