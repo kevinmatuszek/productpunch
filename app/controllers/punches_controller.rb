@@ -1,5 +1,5 @@
 class PunchesController < ApplicationController
-	before_action :find_punch, only: [:show, :edit, :update, :destroy]
+	before_action :find_punch, only: [:show, :edit, :update, :destroy, :upvote]
 
 	def index
 		@punches = Punch.all.order("created_at DESC")
@@ -36,6 +36,11 @@ class PunchesController < ApplicationController
 	def destroy
 		@punch.destroy
 		redirect_to root_path
+	end
+
+	def upvote
+		@punch.upvote_by current_user
+		redirect_to :back
 	end
 
 	private
