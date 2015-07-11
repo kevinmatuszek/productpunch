@@ -1,5 +1,6 @@
 <h1><%= @punch.title %></h1>
 <p><%=  @punch.description %></p>
+<p>Submitted by <%= @punch.user.email %></p>
 
 <%= link_to "Back", root_path %>
 <%= link_to "Edit", edit_punch_path %>

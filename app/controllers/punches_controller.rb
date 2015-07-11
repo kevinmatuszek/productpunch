@@ -9,11 +9,11 @@ class PunchesController < ApplicationController
 	end
 
 	def new
-		@punch = Punch.new 
+		@punch = current_user.punches.build 
 	end
 
 	def create
-		@punch = Punch.new(punch_params)
+		@punch = current_user.punches.build(punch_params)
 
 		if @punch.save
 			redirect_to @punch, notice: "Successfully Created New Punch"
