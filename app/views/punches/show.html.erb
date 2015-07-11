@@ -1,8 +1,27 @@
-<p><%= image_tag @punch.image.url(:medium) %></p>
-<h1><%= @punch.title %></h1>
-<p><%=  @punch.description %></p>
-<p>Submitted by <%= @punch.user.email %></p>
+<div id="pin_show" class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel_heading punch_image">
+				<p><%= image_tag @punch.image.url(:medium) %></p>
+			</div>
+			<div class="panel-body">
+				<h1><%= @punch.title %></h1>
+				<p><%=  @punch.description %></p>
+			</div>
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<p>Submitted by <%= @punch.user.email %></p>
+					</div>
+					<div class="col-md-6">
+						<div class="btn-group pull-right">
+							<%= link_to "Edit", edit_punch_path, class: "btn btn-default" %>
+							<%= link_to "Delete", punch_path, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default" %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_punch_path %>
-<%= link_to "Delete", punch_path, method: :delete, data: {confirm: "Are you sure"} %>

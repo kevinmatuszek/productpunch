@@ -1,7 +1,12 @@
-<h1>This is the index placeholder</h1> 
-
-<% @punches.each do |punch| %>
-	<p><%= link_to (image_tag punch.image.url(:medium)), punch %></p>
-	<h1><%= link_to punch.title, punch %></h1>
-	<p> <%= punch.description %></p>
-<% end %>
+<div id="punches" class="transitions-enabled">
+	<% @punches.each do |punch| %>
+		<div class="box panel panel-default">
+			<p><%= link_to (image_tag punch.image.url(:medium)), punch %></p>
+				<div class="panel-body">
+					<h2><%= link_to punch.title, punch %></h2>
+					<p> <%= punch.description %></p>
+					<p class="user">Submitted by: <%= punch.user.email %></p>
+				</div>
+		</div>
+	<% end %>
+</div>
