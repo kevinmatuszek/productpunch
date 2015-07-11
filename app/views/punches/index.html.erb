@@ -1,7 +1,5 @@
 <h1>This is the index placeholder</h1> 
 
-<%= link_to "New Punch", new_punch_path %>
-
 <% @punches.each do |punch| %>
 	<h1><%= link_to punch.title, punch %></h1>
 	<p> <%= punch.description %></p>

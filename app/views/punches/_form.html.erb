@@ -1,6 +1,26 @@
-<%= simple_form_for @punch do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
+<%= simple_form_for @punch, html: { multipart: true } do |f| %>
+	<% if @punch.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@punch.errors.count, "error") %>prevented This Punch from Saving</h2>
+			<ul>
+				<% @pin.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.input :title, input_html: {class: 'form-control'} %>
+	</p>
+  
+  <p>
+  	<%= f.input :description, input_html: {class: 'form-control'}  %>
+  </p>
+  
+  <p>
+  	<%= f.button :submit, class: 'btn btn-primary'  %>
+  </p>
 <% end %>
+
 
